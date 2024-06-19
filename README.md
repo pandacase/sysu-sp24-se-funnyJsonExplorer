@@ -18,6 +18,17 @@ cmake ..
 make
 ```
 
+# Run
+
+In `./bin/`:
+
+```sh
+./fje -f ../test/example.json -i none -s tree
+./fje -f ../test/example.json -i poker -s tree
+./fje -f ../test/example.json -i none -s rect
+./fje -f ../test/example.json -i poker -s rect
+```
+
 # Demo
 
 Input:
