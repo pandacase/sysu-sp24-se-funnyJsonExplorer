@@ -111,5 +111,15 @@ RectDrawer::drawNode(
 void
 RectDrawer::drawFmt()
 {
-  // Draw nothing
+  // replace left-top
+  _str_buffer->replaceString(0, 0, "┌─");
+  // replace right-top
+  _str_buffer->replaceString(0, 4, "┐");
+  
+  int lastIdx = _str_buffer->size() - 1;
+  _str_buffer->replaceString(lastIdx, 0, "│  ", "└──");
+  _str_buffer->replaceString(lastIdx, 0, "├", "┴");
+
+  // replace right-bottom
+  _str_buffer->replaceString(lastIdx, 4, "┘");
 }

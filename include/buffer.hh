@@ -37,6 +37,15 @@ public:
   //! @param str The new string to write
   void replaceString(int rowIdx, int colIdx, const std::string& str);
 
+  void replaceString(int rowIdx, int colIdx, const std::string& oldStr, const std::string& newStr) {
+    auto& str = _buffer[rowIdx][colIdx];
+    size_t startPos = 0;
+    while ((startPos = str.find(oldStr, startPos)) != std::string::npos) {
+      str.replace(startPos, oldStr.length(), newStr);
+      startPos += newStr.length(); // 移动到新字符串的后面，避免循环替换
+    }
+  }
+
   //! @brief Clear the whole buffer
   //! 
   void clear() { _buffer.clear(); }
