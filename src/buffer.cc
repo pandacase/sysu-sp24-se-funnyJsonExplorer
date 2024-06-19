@@ -62,11 +62,13 @@ StringBuffer::size(int rowIdx)
 int
 StringBuffer::length(int rowIdx)
 {
-  int ret = 0;
-  for (const auto& str : _buffer[rowIdx]) {
-    ret += str.length();
-  }
-  return ret;
+    std::wstring_convert<std::codecvt_utf8<char32_t>, char32_t> converter;
+    int ret = 0;
+    for (const auto& str : _buffer[rowIdx]) {
+        std::u32string utf32String = converter.from_bytes(str);
+        ret += utf32String.length();
+    }
+    return ret;
 }
 
 //////////////////////////////////////////////////////////////////

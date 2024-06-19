@@ -50,7 +50,7 @@ TreeDrawerFactory::createPokerDrawer()
 std::unique_ptr<Drawer>
 RectDrawerFactory::createNoneDrawer()
 {
-  auto newDrawer = std::make_unique<TreeDrawer>();
+  auto newDrawer = std::make_unique<RectDrawer>();
   
   newDrawer->branch       = "├─";
   newDrawer->vertical     = "│ ";
@@ -66,7 +66,7 @@ RectDrawerFactory::createNoneDrawer()
 std::unique_ptr<Drawer>
 RectDrawerFactory::createPokerDrawer()
 {
-  auto newDrawer = std::make_unique<TreeDrawer>();
+  auto newDrawer = std::make_unique<RectDrawer>();
   
   newDrawer->branch       = "├─";
   newDrawer->vertical     = "│ ";

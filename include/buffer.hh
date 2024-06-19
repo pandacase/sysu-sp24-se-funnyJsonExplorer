@@ -6,6 +6,8 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <codecvt>
+#include <locale>
 
 #include "json_tree.hh"
 
